@@ -11,6 +11,7 @@ class FuseTRequirement < Requirement
   satisfy(build_env: false) { self.class.fuse_t_installed? }
 
   def self.fuse_t_installed?
+    system "ls", "-lR", "/usr/local"
     File.exist?("/usr/local/include/fuse.h") &&
       !File.symlink?("/usr/local/include") &&
       File.exist?("/usr/local/lib/libfuse-t.dylib") &&

@@ -8,13 +8,8 @@ class EncfsFuseT < Formula
   # The code comprising the EncFS library (libencfs) is licensed under the LGPL.
   # The main programs (encfs, encfsctl, etc) are licensed under the GPL.
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/vgough/encfs.git", branch: "master"
-
-  bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 arm64_tahoe:   "37fe1d7e2c95f33fbfb33bdb7477b279c4698260aa52894467de41aece01b81d"
-    sha256 arm64_sequoia: "540f91e47120bb2fd46043a6e8a9b10f72f552bf2d343985889e631d1d0c71fc"
-  end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
@@ -28,6 +23,8 @@ class EncfsFuseT < Formula
     url "https://github.com/vgough/encfs/commit/75080681626062e5832aec0b1bb3aa37d8364822.patch?full_index=1"
     sha256 "0222bc4a4f03541b1523b03471f6af5925d4ed2a4c0d36a9a6fe39a18c036770"
   end
+
+  patch :DATA
 
   def install
     setup_fuse
@@ -47,3 +44,19 @@ class EncfsFuseT < Formula
     assert_match version.to_s, shell_output("#{bin}/encfs 2>&1", 1)
   end
 end
+__END__
+diff --git a/cmake/FindFUSE.cmake b/cmake/FindFUSE.cmake
+index bb8cb50..668f448 100644
+--- a/cmake/FindFUSE.cmake
++++ b/cmake/FindFUSE.cmake
+@@ -10,8 +10,8 @@ if (FUSE_INCLUDE_DIR)
+ endif (FUSE_INCLUDE_DIR)
+ 
+ if (APPLE)
+-    set (FUSE_NAMES libosxfuse.dylib fuse)
+-    set (FUSE_SUFFIXES osxfuse fuse)
++    set (FUSE_NAMES libfuse-t.dylib fuse)
++    set (FUSE_SUFFIXES fuse-t fuse)
+ else (APPLE)
+     set (FUSE_NAMES fuse refuse)
+     set (FUSE_SUFFIXES fuse refuse)

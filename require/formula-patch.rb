@@ -18,6 +18,7 @@ class Formula
       -DCMAKE_INCLUDE_PATH=#{alt_fuse_root}/include/fuse;#{alt_fuse_root}/include
       -DCMAKE_LIBRARY_PATH=#{alt_fuse_root}/lib
       -DCMAKE_CXX_FLAGS=-I#{alt_fuse_root}/include/fuse\ -D_USE_FILE_OFFSET_BITS=64
+      -DCMAKE_INSTALL_RPATH=/usr/local/lib
     ]
   end
 
@@ -31,7 +32,12 @@ class Formula
 
   def setup_fuse_libs(fuse_suffix: "")
     mkdir "#{alt_fuse_root}/lib" do
-      Dir["/usr/local/lib/libfuse-t#{fuse_suffix}.*"].each { |f| cp_r f, "." }
+      suffix = if fuse_suffix == ""
+        "-t"
+      else
+        fuse_suffix
+      end
+      Dir["/usr/local/lib/libfuse#{suffix}.*"].each { |f| cp_r f, "." }
     end
   end
 
@@ -74,6 +80,7 @@ class Formula
     ENV.append "CXXFLAGS", "-I#{alt_fuse_root}/include/fuse#{fuse_suffix}"
     ENV.append "CPPFLAGS", "-I#{alt_fuse_root}/include"
     ENV.append "LDFLAGS", "-L#{alt_fuse_root}/lib"
+    ENV.append "LDFLAGS", "-Wl,-rpath,/usr/local/lib"
     ENV.append "CGO_CPPFLAGS", "-I#{alt_fuse_root}/include/fuse#{fuse_suffix}"
     ENV.append "CGO_CPPFLAGS", "-I#{alt_fuse_root}/include"
     ENV.append "CGO_LDFLAGS", "-L#{alt_fuse_root}/lib"

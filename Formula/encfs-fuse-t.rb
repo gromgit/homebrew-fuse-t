@@ -11,6 +11,13 @@ class EncfsFuseT < Formula
   revision 1
   head "https://github.com/vgough/encfs.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    sha256 arm64_golden_gate: "ad2284e7724cee0d86ecc875a40399d2723a0a9b38f9d7f1e38f823ece16c05a"
+    sha256 arm64_tahoe:       "e872f877a6320374808ba02cbcfe172bf27a3e3fe273aa68a1e71c1133fcfb76"
+    sha256 arm64_sequoia:     "fc17942850d34ea1eaefcc05da57aa3de2167392b97446e42449c13fb53caa36"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on FuseTRequirement

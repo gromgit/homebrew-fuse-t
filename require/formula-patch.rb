@@ -38,8 +38,15 @@ class Formula
   def setup_fuse_pkgconfig(fuse_suffix: "")
     # Fix fuse.pc in alt root
     mkdir "#{alt_fuse_root}/lib/pkgconfig" do
-      cp "/usr/local/lib/pkgconfig/fuse-t#{fuse_suffix}.pc", "."
-      inreplace "fuse-t#{fuse_suffix}.pc", "/usr/local", alt_fuse_root.to_s
+      suffix = if fuse_suffix == ""
+        "-t"
+      else
+        fuse_suffix
+      end
+      cp "/usr/local/lib/pkgconfig/fuse#{suffix}.pc", "."
+      # Most software expects fuse.pc when using FUSE2
+      ln_sf "fuse-t.pc", "fuse.pc" if fuse_suffix == ""
+      inreplace "fuse#{suffix}.pc", "/usr/local", alt_fuse_root.to_s
     end
     ENV.prepend_path "PKG_CONFIG_PATH", "#{alt_fuse_root}/lib/pkgconfig"
   end

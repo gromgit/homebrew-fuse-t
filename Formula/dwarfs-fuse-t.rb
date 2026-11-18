@@ -13,6 +13,13 @@ class DwarfsFuseT < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    sha256 cellar: :any, arm64_golden_gate: "fa032b3cef959ff97a57c1f66e7c1e8ea76ce5e816ee3d5e95de0827647cfe7b"
+    sha256 cellar: :any, arm64_tahoe:       "c9b674aa7ca379a57a5b3fa0b6b0bc3c168c2b64a36aef912539768129a8b67d"
+    sha256 cellar: :any, arm64_sequoia:     "fe8d7e6a7657a6f23f22df8e16b012c8940a52fe05c41a24c11504672daabe42"
+  end
+
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "pkgconf" => :build

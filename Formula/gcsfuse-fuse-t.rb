@@ -14,9 +14,10 @@ class GcsfuseFuseT < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e96bd5d5841fa86606970cb1b799b4d6552206bb6a427c3b462bf028da775ffb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fddca8ded8c44cd1229095078315afe84abc1d0b75edf0eda1edf6050d82c11"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c5db27398678b4014dc7f2f56fe846aaefe2500a35ff744ebee92563f63773d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "023b9304f541bfccabb52a5c9d1dba5eb05a2d8cc574cf706b81a6154b5058eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5d05ead8c18cec437ede66e011237696c276086b942d4b6621e78faeb47771b4"
   end
 
   depends_on "go" => :build

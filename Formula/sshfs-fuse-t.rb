@@ -8,9 +8,10 @@ class SshfsFuseT < Formula
   license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any, arm64_tahoe:   "7d760b60854885933941ef9482cbf4cbb5088067af264c927f5af7d22d89fd51"
-    sha256 cellar: :any, arm64_sequoia: "06ec2ea56ad23c597dfd9caede0d8b199becbae1de40966e9df305bca1821f0f"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    sha256 cellar: :any, arm64_golden_gate: "7a979ac13e01f28700e97a747b101298d462db019c92a5d0f982cb5888639d43"
+    sha256 cellar: :any, arm64_tahoe:       "59b22a6bba4a1475a52c771e607039bd473b476296df35ba0a84e19bbf1cdbd4"
+    sha256 cellar: :any, arm64_sequoia:     "4c887e7d792261468245cd63105126170e34aec9543487c3d014bf583edf8f55"
   end
 
   depends_on "coreutils" => :build

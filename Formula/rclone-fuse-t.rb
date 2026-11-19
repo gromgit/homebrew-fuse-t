@@ -9,9 +9,10 @@ class RcloneFuseT < Formula
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "dda7622b0941f811cd4e50f12a30ddfea67a9124043ff6564f574e1ad1412279"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ace27f19dd0d9c38e6ab115cacafd448d3dc0c2d07b1c097e7b328f0f79508a9"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eadc352e975e165afdda52667b570dec9403d20ff71bac6e1543e3a1356c9742"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "34082741ce8fd9d18314aba5fc94515c0ac0911e3a58760ada88fe0851555ce7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4c09ff7dfaeeec311c32c24cea26d920a0b241769398493a0bb9ae30104a0701"
   end
 
   depends_on "go" => :build

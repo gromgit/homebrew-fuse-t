@@ -11,9 +11,10 @@ class RatarmountFuseT < Formula
   head "https://github.com/mxmlnkn/ratarmount.git", branch: "master"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any, arm64_tahoe:   "972ce18bff06238d458ff9703c4e14ba578735caf6273b95bfc91eb0d1a15ac4"
-    sha256 cellar: :any, arm64_sequoia: "7b8ec4a58b627ee7da766a25827f8221e58f8a3f71534fddd839f04108eae5aa"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    sha256 cellar: :any, arm64_golden_gate: "2aa8db40d24b0abeb8dc2d36977f191dc10ec2050802df03cf586bbe18d8f78c"
+    sha256 cellar: :any, arm64_tahoe:       "fc3fc038bc47918fde85bc20a5dde5fa15fec950ae953d7f019d27466a60e451"
+    sha256 cellar: :any, arm64_sequoia:     "d50fd034c5de0902e01bab48edfa60e5230b52646444fa8f6dc1259f03f6f729"
   end
 
   depends_on FuseTRequirement

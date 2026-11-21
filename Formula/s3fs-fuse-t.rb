@@ -9,9 +9,10 @@ class S3fsFuseT < Formula
   head "https://github.com/s3fs-fuse/s3fs-fuse.git", branch: "master"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any, arm64_tahoe:   "d68a2a2b163e8d032b22922156bef9c54f9ce0dbe74225d54b0da0f360f29fd2"
-    sha256 cellar: :any, arm64_sequoia: "0f6c30a3139b5e34803c109df921c9867f2b0cd7196980045b7582fa64c97fd2"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    sha256 cellar: :any, arm64_golden_gate: "f8ce0b92fd7332866b6ee7014b666af243f40d7b5a365eeb1bdca3762c78b6b2"
+    sha256 cellar: :any, arm64_tahoe:       "28ae0e80f459685a5e3ef0e77b630dbbe10d3ce311cf34b0b94ac11425fea28f"
+    sha256 cellar: :any, arm64_sequoia:     "44ba175b3304b9500e70dd3287e038170620ab311906d1648b5e939ddc77bd6d"
   end
 
   depends_on "autoconf" => :build

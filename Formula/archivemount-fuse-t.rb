@@ -9,9 +9,11 @@ class ArchivemountFuseT < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any, arm64_tahoe:   "36036fafbdaf3f07f90d2a8f3a9333425551846b29c295560a886462a89ffe20"
-    sha256 cellar: :any, arm64_sequoia: "5d013b5d7d5ea3e04be4749afc2b4fedbbff117c3d8d20c014ef8fc041282b25"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    manifest_sha256 "707d602c4362ddeb2d46d0d3b285e55e1aa10f6d862388b8e93d5796ff09d27a"
+    sha256 cellar: :any, arm64_golden_gate: "c3813439170871dbb8cf2c7b408268dea45215f7dfd296dd8441041002173318"
+    sha256 cellar: :any, arm64_tahoe:       "5e836fa8f305e478a9f82a56d9138aaf003d541eb6c9a5599e56add6f080e669"
+    sha256 cellar: :any, arm64_sequoia:     "d29ab77e5963a112c6b819117afa1f36b9dee1fff0cc3b7eb57f7a0b7818f0e0"
   end
 
   depends_on "pkgconf" => :build

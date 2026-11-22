@@ -8,9 +8,11 @@ class S3BackerFuseT < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any, arm64_tahoe:   "fdb9cdcb602cb54f7e8fae9f66b991bcf40d1f6c4b96dc87c4edbc9a4c339306"
-    sha256 cellar: :any, arm64_sequoia: "13e2db57592919608b40618bf726d9f903626240252498d6e45fdb8c3fa6e4e2"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    manifest_sha256 "51709bde611c6763007ed012308a1646fae7653b560546ecffa9827c80cdd421"
+    sha256 cellar: :any, arm64_golden_gate: "c30f9842480f2c98422dd6f45bb764467cbf52e8f0c1c2e9754472978f62e082"
+    sha256 cellar: :any, arm64_tahoe:       "008bd775875b2a416a1b12982051996b0673da8c269d5d9695956344d10be0b6"
+    sha256 cellar: :any, arm64_sequoia:     "11aaaef6645c3b2ff241aae69fb65b2815d3966793eab949600e7343ae1186d3"
   end
 
   depends_on "pkgconf" => :build

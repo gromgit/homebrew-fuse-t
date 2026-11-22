@@ -8,9 +8,11 @@ class UnionfsFuseT < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7dbb37810c74de0430f67f304e008868ba51b16a07cce3f1bbcce9f021dbb2af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc0f4624d9699b5049a5c6f9aaf8745a7727f097b2aed85eed8051fe7399b215"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    manifest_sha256 "6004918e185298b32bf1fff719717452a3d65f6292f9fd998e03f44c511d08f2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "07e11ff7ef4a4a8641b7fcfd0fab3ed0b7e2d01da057c619af162cf41c63f280"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d01b625b8103b83bfabb1c51f7ccbb318c3976d79159b7a3d04e6c5e91543079"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d2331e6fc1579a131c163099ca8b9eaa7ddbe9749bbe847c1b16dbfa669af1b1"
   end
 
   depends_on "cmake" => :build

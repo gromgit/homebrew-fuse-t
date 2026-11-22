@@ -9,9 +9,11 @@ class AfuseFuseT < Formula
   license "GPL-2.0-only"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d0b0e74b43c27ce951eec136e4c45a98c43edc39cceeb95418f43c2d5bfa9afe"
-    sha256 cellar: :any,                 ventura:      "81eac9045ff5882fa86b3e40c6562bbed06cf1346ec5fb368033511cab03c982"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    manifest_sha256 "c56a014c5c95868d5ee7010bac588ced76ee2887f9a4249303e3a53a48f6e793"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3eb43a112a6117707d954fee4f0723a61e445494cd0fad53756d19ced041d787"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bff91f6e94343803277d60ba70846592d675e163a9cb8f8a37c187dfc4ad4111"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a83779a56f275629b2fce9d052a8a9219a070f7f84fa37d09c0afbe787dad8fe"
   end
 
   depends_on "autoconf" => :build

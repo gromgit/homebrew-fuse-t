@@ -8,9 +8,11 @@ class BindfsFuseT < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "abe6cbec99f98023c699adf447c9673884a3d55cd4e9aa9f188226bec78750c9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3d392955a8c59f9bdb757dfe9900608b2a3c54f21021d628d8adb679a352649"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    manifest_sha256 "d845f33aa6ec578cdc3e135c54951223e5b36a01023221b9ff27733de404f565"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ef72572b7533edee9249637baa8ced3699182f34bf707d5dc032c0c541d59407"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "149d4803b839a3e4f5878604f5067256e0f0f1d6df9157bd2f0b3ff07a3f5a49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0ba54ec889b822907ed6359d9e4799e1dca64e11f18551cee35178bac605c0b8"
   end
 
   head do

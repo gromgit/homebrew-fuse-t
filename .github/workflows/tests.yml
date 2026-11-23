@@ -18,6 +18,10 @@ jobs:
       contents: read
       pull-requests: read
     steps:
+      - name: Set up debug env
+        if: ${{ runner.debug == '1' }}
+        run: echo "ADD_OPTS=--debug --verbose" >> "$GITHUB_ENV"
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
@@ -40,7 +44,7 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae --root-url='https://ghcr.io/v2/gromgit/fuse-t'
+      - run: brew test-bot --only-formulae --root-url='https://ghcr.io/v2/gromgit/fuse-t' $ADD_OPTS
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact

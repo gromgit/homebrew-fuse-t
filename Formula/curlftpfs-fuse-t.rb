@@ -9,10 +9,11 @@ class CurlftpfsFuseT < Formula
   head ":pserver:anonymous:@curlftpfs.cvs.sourceforge.net:/cvsroot/curlftpfs", using: :cvs
 
   bottle do
-    root_url "https://ghcr.io/v2/gromgit/fuse"
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma: "52266b0b218496e9f24f982e74165991d97b49791862e683fb240d635e63f063"
-    sha256 cellar: :any, ventura:      "1ed49dce5000b70b4ef4e47b3d8c535b4c25994cde3122a461483aa34e5d6cbe"
+    root_url "https://ghcr.io/v2/gromgit/fuse-t"
+    manifest_sha256 "5672514f1c161bfa9bf20ed5d1f7fd76a8abf1cba2e040976a9df72f7ba366a7"
+    sha256 cellar: :any, arm64_golden_gate: "9b717dd2b14dbe93fc0ff4d16586546b8746a6c80161e021909bb721dce7ac43"
+    sha256 cellar: :any, arm64_tahoe:       "957aab64f8e81dadff9fadba38e324e99ddf9ba50c63e2ad9968f396f77eb984"
+    sha256 cellar: :any, arm64_sequoia:     "948f9aac8c25613ebb9102ea2120275e76074711941f77a4c14edf78a9e5d5d5"
   end
 
   depends_on "autoconf" => :build
